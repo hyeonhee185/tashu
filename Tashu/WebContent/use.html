@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타슈란</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="../css/outstyle.css">
+<link rel="stylesheet" href="use.css">
+
+</head>
+<body>
+  <header>
+    <div class="headUtil"> 
+      <div class="fr">
+           <a href="main.html">HOME</a>
+           <a href="login.do">로그인</a>
+           <a href="/Tashu/member/join.do">회원가입</a>
+           
+      </div>
+    </div>
+  </header>
+
+  <nav id="menu">
+    <ul>
+      <li> 
+        <a href="subex.html" class="x">타슈란</a>
+        <ul class="y">
+          <li><a href="subex.jsp">타슈소개</a></li>
+          <li><a href="use.html">서비스 안내</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="stationMap.do" class="x1">대여소 조회</a>
+        <ul class="y">
+          <li><a href="stationMap.do">대여소 조회</a></li>
+          <li><a href="stationList_admin.do">대여소 목록</a></li>
+        </ul>
+      </li>
+      
+      <li> 
+        <a href="paymentReady.do" class="x2">이용권 결제</a>
+        <ul class="y1">
+          <li><a href="payment">이용권 결제</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="course.do" class="x3">코스</a>
+        <ul class="y1">
+          <li><a href="course.do">추천코스</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="coaching.do" class="x4">코칭</a>
+        <ul class="y1">
+          <li><a href="coaching.do">코칭</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="notice.do" class="x5">공지사항</a>
+        <ul class="y1">
+          <li><a href="notice.do">공지사항</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="myTashu.do" class="x6">회원정보</a>
+        <ul class="y2">
+          <li><a href="myTashu.do">회원정보</a></li>
+          <li><a href="pymninfo.do">결제이력</a></li>
+          <li><a href="usemntinfo.do">대여이력</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+<div id="subCont">
+    <div class="scont_wrap">
+    
+      <div id="sublocation">
+       <div id="subTashu" class="sub" style="display: block;">
+         <h2>
+           타슈란
+           <span>TA-SHU Introduction</span>
+         </h2>
+         <ul class="link">
+           <li id="depth_1" class="on">
+             <a href="subex.jsp">
+                타슈소개
+             </a>
+           </li>
+           <li id="depth_2">
+             <a href="use.html" id="use">서비스 안내</a>
+           </li>
+         </ul>
+       </div>
+     </div>  
+     
+          
+     <div class="subcontents">
+       <div id="cont_wrap" class="tashu_pb30">
+<!--          <div class="mytashuArea"> -->
+         <div class="serviceArea">
+          <div id="location">
+            <h2>서비스 안내</h2>
+          </div>
+         
+           <h2 class="tashu_h4">이용대상 및 가입안내<h2>
+         <table class="typeB">
+           <colgroup>
+             <col style="width:30%;">
+             <col style="width:70%;">
+           </colgroup>
+           <tbody>
+             <tr>
+               <th scope="col">이용대상</th>
+               <td>대전 시민이라면 누구든지 이용 가능합니다.</td>
+             </tr>
+             <tr>
+               <th scope="col">운영시간</th>
+               <td>대여시간 : 05시 ~ 24시 / - 반납시간 : 24시간</td>
+             </tr>
+           </tbody>
+         </table>
+         <h4 class="tashu_h4">회원 안내</h4>
+         <table class="typeB">
+           <colgroup>
+             <col style="width:30%;">
+             <col style="width:70%;">
+           </colgroup>
+           <tbody>
+             <tr>
+               <th scope="col">회원</th>
+               <td>홈페이지를 통하여 회원 가입한 이용자</td>
+             </tr>
+          
+             <tr>
+               <th scope="col">비회원</th>
+               <td>회원 가입하지 않은 회원</td>
+             </tr>
+           </tbody>
+         </table>
+         <h4 class="tashu_h4">요금 안내</h4>
+         <ul class="tashuList">
+           <li>이용료는 3가지 이용권에 명시되어 있는 금액으로 산정된다.</li>
+           <li>기본 사용료의 사용시간 범위에서 반복이용은 가능하다. 이 경우 별도의 사용료는 부과하지 않는다.</li>
+           <li>이용권은 1회 1매씩 구매가 가능하다.</li>
+           <!-- <li>추가이용료의 산정에 있어 30분 미만은 30분으로 본다.</li> -->
+         </ul>
+         <table class="typeB">
+           <colgroup>
+             <col style="width:20%;">
+             <col style="width:30%;">
+             <col style="width:30%;">
+             <col style="width:20%;">
+           </colgroup>
+           <thead>
+             <tr>
+               <th scope="col"> </th>
+               <th scope="col">1시간</th>
+               <th scope="col">1일</th>
+               <th scope="col">1달</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <th scope="col">기본 사용료</th>
+               <td>- 1,000원</td>
+               <td>- 3,500원</td>
+               <td>- 30,000원</td>
+             </tr>
+             <tr>
+               <th scope="col">요금 결제수단</th>
+               <td colspan="3">- 온라인결제(신용카드/카카오페이)</td>
+            
+             </tr>
+             <!-- <tr>
+               <th scope="col">결제 장소</th>
+               <td colspan="2">- 타슈 홈페이지, 스마트폰 앱</td>
+               <td>- 대여소(키오스크)</td>
+             </tr>
+              -->
+           </tbody>
+         </table>
+         <!-- <h4 class="tashu_h4">환불 정책</h4>
+         <table class="typeB">
+           <colgroup>
+             <col style="width:20%;">
+             <col style="width:20%;">
+             <col style="width:50%;">
+             <col style="width:50%;">
+             <col style="width:30%;">
+           </colgroup>
+           <thead>
+             <tr>
+               <th scope="col" rowspan="2" colspan="2">서비스 구분</th>
+               <th scope="col" colspan="3">탈퇴요청 기한별 환불 범위</th>
+             </tr>
+             <tr>
+               <th scope="col">가입 7일 이내</th>
+               <th scope="col">가입 14일 이내</th>
+               <th scope="col">14일 이후</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td rowspan="2">1년권</td>
+               <td>이용</td>
+               <td colspan="2">기본요금 및 결제수수료 공제 후 환불 (기본요금 4,000원 / 수수료 1,000원)</td>
+               <td rowspan="6">환불불가</td>
+             </tr>
+             <tr>
+               <td>비이용</td>
+               <td colspan="2">결제수수료 공제 후 환불 (수수로 1,000원)</td>
+             </tr>
+             <tr>
+               <td rowspan="2">30일권</td>
+               <td>이용</td>
+               <td>기본요금 및 결제수수료 공제 후 환불<br>(기본요금 1,200원 / 수수료 500원)</td>
+               <td>환불불가</td>
+             </tr>
+             <tr>
+               <td>비이용</td>
+               <td colspan="2">결제수수료 공제 후 환불 (수수료 500원)</td>
+             </tr>
+             <tr>
+               <td>7일권</td>
+               <td>비이용</td>
+               <td colspan="2">결제수수료 공제 후 환불(수수료 500원)</td>
+             </tr>
+             <tr>
+               <td>1일권</td>
+               <td>비이용</td>
+               <td colspan="2">환불불가</td>
+             </tr>
+           </tbody>
+         </table> -->
+         <h4 class="tashu_h4">주의사항</h4>
+         <ul class="tashuList">
+           <li>
+             이용권을 다른 사람에게 양도할 수 없으며, 양도로 인해 발생하는 불이익은 구매자가 책임져야 한다.   
+           </li>
+          
+         </ul>
+         
+         </div>
+         </div>
+       </div>
+     </div>
+    </div>
+     
+
+
+  <div id="footer">
+    <div class="footCont">
+      <div class="footAddr">
+        <address>
+          <span>대전광역시 (35242) 대전광역시 서구 둔산로 100(둔산동) / 대표자 : 허태정 / 사업자등록번호 : 305-83-00024 </span>
+          <span>대전광역시 시설관리공단 (34123) 대전광역시 유성구 엑스포로 326(원촌동) / 대표자 : 설동승 / 사업자등록번호 : 314-82-07247</span>
+          <span>콜센터: 1899-2282 &nbsp; &nbsp; 팩스: (042)610-1829  </span>
+        </address>
+        <p class="copy">Copyright &copy; 2012 대전광역시, 대전광역시시설관리공단. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+</html>

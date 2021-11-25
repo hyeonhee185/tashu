@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="rental">
+
+	<insert id="insertRental" parameterClass="java.util.Map">
+		insert into rental(rental_no, mem_id, bicycle_no, rental_time, rental_station, rental_locker)
+		values((select nvl(max(rental_no),0)+1 from rental), #mem_id#, TO_NUMBER(#bicycle_no#), sysdate, TO_NUMBER(#station_id#), TO_NUMBER(#locker_id#))
+	</insert>
+	
+	<update id="updateReturn">
+		update rental
+		set return_time = sysdate
+		    ,return_station= #station_id#
+		    ,return_locker= #locker_id#
+	  where rental_no =(select rental_no from rental 
+						where mem_id=#mem_id# 
+						and rental_no= (select max(rental_no) from rental)
+						and return_time is null)
+	</update>
+	
+	<select id="checkRent" resultClass="String" parameterClass="String">
+		select rental_no from rental where mem_id = #String#
+		and return_time is null
+	</select>
+	
+	<select id="getAllRent" parameterClass="String" resultClass="rentalVO">
+		select  to_char(RENTAL_TIME,'yyyy-mm-dd hh:mi') rental_time, 
+        		(select station_name from station where station_id=RENTAL_STATION) rental_name,
+       		 	to_char(REturn_TIME,'yyyy-mm-dd hh:mi') return_time, 
+        		(select station_name from station where station_id=RETURN_STATION) return_name
+		from rental
+		where mem_id = #String#
+	</select>
+	
+	
+	<select id="getPayment" parameterClass="String" resultClass="String">
+		select rental_no from rental where payment_no=to_number(#String#)
+	</select>
+	
+</sqlMap>

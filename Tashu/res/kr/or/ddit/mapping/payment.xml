@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="payment">
+	<select id="getPaymentList" resultClass="paymentVO" parameterClass="String">
+		select payment_no,
+				(select voucher_name from voucher where voucher_id=vaucher_id) voucher_name, 
+				to_char(start_time,'yyyy-mm-dd hh:mi') start_time, 
+				to_char(end_time,'yyyy-mm-dd hh:mi') end_time
+		from payment
+		where mem_id =#String#
+	</select>
+		
+	<insert id = "insertPayment" parameterClass="paymentVO">
+	INSERT INTO PAYMENT(PAYMENT_NO,MEM_ID,VAUCHER_ID)
+	VALUES((SELECT NVL(MAX(PAYMENT_NO),0)+1 FROM PAYMENT),#mem_id#,#vaucher_id#)
+	</insert>
+	
+	<select id="getPrice" parameterClass="String" resultClass="String">
+		select voucher_price from voucher where voucher_id=#String#
+	</select>
+	
+	<select id="getPaymentTime" parameterClass="String" resultClass="int">
+		select count(*) from payment where <![CDATA[end_time>sysdate ]]> and mem_id = #String#
+	</select>
+	
+
+	
+</sqlMap>

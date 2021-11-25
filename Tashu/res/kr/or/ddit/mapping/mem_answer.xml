@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="mem_answer">	
+
+<insert id="insertMemAnswer" parameterClass="java.util.Map">
+	insert into mem_answer
+	values
+	(
+	(select mem_id from member where mem_id=#mem_id#),
+		TO_NUMBER(#ans_1#),
+		TO_NUMBER(#ans_2#),
+		TO_NUMBER(#ans_3#),
+		TO_NUMBER(#ans_4#),
+		TO_NUMBER(#ans_5#),
+		TO_NUMBER(#ans_6#),
+		1
+	)
+</insert>
+
+<insert id="insertGosuAnswer" parameterClass="java.util.Map">
+	insert into mem_answer
+	values
+	(
+	(select mem_id from member where mem_id=#mem_id#),
+		TO_NUMBER(#ans_1#),
+		TO_NUMBER(#ans_2#),
+		TO_NUMBER(#ans_3#),
+		null,
+		null,
+		null,
+		2
+	)
+</insert>
+
+<select id="checkMemAnswer" resultClass="String" parameterClass="String"> 
+	select mem_id
+	from mem_answer
+	where mem_id=#String#
+</select>
+
+<select id="checkMemMatchingResult" resultClass="String" parameterClass="String"> 
+	select TEACH_MEM
+	from coaching
+	where NORMAL_MEM=#String#
+</select>
+
+
+<select id="matchingGosu" resultClass="String" parameterClass="String">
+	select a.mem_id 
+	from 
+	(select * from mem_answer where status=2) a,  
+	(select * from mem_answer where status=1) b  
+	where a.ans_1 = b.ans_1 and a.ans_2= b.ans_2 and a.ans_3= b.ans_3 
+	and   b.mem_id=#mem_id#
+</select>
+
+<select id="normalMemresult" resultClass="mem_answerVO" parameterClass="String">
+select a.normal_mem mem_id, 
+        (select answer_content from answer where answer_id=b.ans_4) ansc_4,
+        (select answer_content from answer where answer_id=b.ans_5) ansc_5, 
+        (select answer_content from answer where answer_id=b.ans_6) ansc_6
+	from mem_answer b, coaching a
+	where b.mem_id (+)=a.normal_mem 
+	and a.teach_mem=#String#
+</select>
+
+<delete id="deleteMatchingResult" parameterClass="String">
+    delete from coaching
+    where normal_mem=#normal_mem#
+</delete>
+
+
+</sqlMap>

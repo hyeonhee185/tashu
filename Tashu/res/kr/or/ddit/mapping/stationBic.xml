@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="stationBic">
+	
+	<select id="getStationLocker" resultClass="stationBicVO" parameterClass="int">
+		select station_id, locker_id, nvl(bicycle_no,0) bicycle_no from station_bic where station_id = #int#
+	</select>
+</sqlMap>

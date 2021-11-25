@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="station">
+	<select id="getAllStation" resultClass="stationVO">
+	  	select STATION_ID, STATION_NAME, STATION_AREA, STATION_GU, STATION_DONG, STATION_ADDR, STATION_LOCKER from station
+	  	
+	</select>
+	
+	   <!-- 위도, 경도 포함 -->
+   <select id="getAllStation2" resultClass="stationVO">
+        select STATION_ID, STATION_NAME, STATION_AREA, STATION_GU, STATION_DONG, STATION_ADDR, STATION_LOCKER, STATION_Y_POS,STATION_X_POS from station
+   </select>
+	
+	<select id="getStationArea" resultClass="stationVO" parameterClass="String">
+		select STATION_DONG
+		from station where station_area = #String#
+		group by station_dong
+	</select>
+	
+	<select id="getStation" resultClass="stationVO" parameterClass="String">
+		select a.station_id, station_locker,station_name , b.cnt
+		from station a,
+ 		(select station_id, count(*) cnt from station_bic where  bicycle_no is null group by station_id) b
+		where station_dong=#String# and
+		a.station_id= b.station_id
+	</select>
+	
+	<select id="getStationList" resultClass="stationVO">
+		select a.station_id, station_locker,station_name , b.cnt
+		from station a,
+ 		(select station_id, count(*) cnt from station_bic where  bicycle_no is null group by station_id) b
+		where a.station_id= b.station_id
+		order by station_id asc
+		
+	</select>
+	
+	<!-- 지도에서 대여, 반납 출력용 -->
+	<select id="getStationList2" resultClass="stationVO">
+		select a.station_id, station_locker,station_name , b.cnt
+		from station a,
+ 		(select station_id, count(*) cnt from station_bic where  bicycle_no is null group by station_id) b
+		where a.station_id= b.station_id
+        order by station_id
+	</select>
+	
+	<insert id="insertStation" parameterClass="StationVO">
+		insert into station values 
+    (
+    (SELECT NVL(MAX(station_id),0)+1 FROM station),
+    #station_name#, #station_area#, #station_gu#, #station_dong#, #station_addr#, #station_locker#, #station_y_pos#, #station_x_pos#, #station_status#)
+	</insert>
+	
+	<delete id="deleteStation" parameterClass="String">
+		delete from station 
+		where station_name=#station_name#
+	</delete>
+	
+	<select id="selectDongStation" resultClass="stationVO" parameterClass="String">
+	    select STATION_NAME, STATION_Y_POS, STATION_X_POS
+		from station where station_dong = #station_dong#
+		
+	</select>
+	
+</sqlMap>

@@ -1,0 +1,436 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+*{margin:0; padding:0}
+
+body{   
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;  
+	font-size: 1em;
+}
+
+#menu{
+	text-align:center;
+	font-size: 14px;
+/* 	background-color: #999; */
+}
+#menu > ul > li{
+	display: inline-block;
+	position: relative;
+	list-style: none;
+}
+
+
+
+#menu > ul > li > a{
+	display: block;
+/* 	padding: 10px 40px; */
+    padding: 50px 40px 20px 40px;
+	font-weight: 900;
+	font-size: 19px;
+/* 	background-color: #999; */
+	color: #333; 
+}
+
+
+#menu ul .y{
+	display:none;
+	position: absolute;
+	left: 0;
+	top: 80px;
+	width:100%;
+ 	background: #0095eb; 
+	height: 60px;
+}
+
+#menu ul .y1{
+	display:none;
+	position: absolute;
+	left: 0;
+	top: 80px;
+	width:100%;
+ 	background: #0095eb; 
+	height: 40px;
+}
+
+#menu ul .y2{
+	display:none;
+	position: absolute;
+	left: 0;
+	top: 80px;
+	width:100%;
+ 	background: #0095eb; 
+	height: 85px;
+}
+
+
+
+#menu  ul li ul li {
+	color: #fff;
+	margin-top: 10px;
+}
+
+#menu  ul li ul li a{
+	color: #fff;
+}
+
+#menu > ul > li:hover ul {
+	display: block;
+	font-size: 15px;
+	font-weight: 900;
+}
+
+/* nav li { */
+
+
+/*     background-repeat: no-repeat; */
+/*     background-position: center top; */
+/* } */
+
+
+#menu ul li:nth-child(1) {
+	background-image: url(../images/menuIcon01.png);
+	background-repeat: no-repeat;
+	background-position: 50px 20px;
+}
+
+#menu ul li:nth-child(1):hover {
+	background-image: url(../images/menuIcon01_on.png);
+	background-repeat: no-repeat;
+	background-position: 50px 20px;
+	z-index: 5;
+}
+
+#menu ul li:nth-child(2) {
+	background-image: url(../images/menuIcon02.png);
+	background-repeat: no-repeat;
+	background-position: 75px 20px;
+}
+
+#menu ul li:nth-child(2):hover {
+	background-image: url(../images/menuIcon02_on.png);
+	background-repeat: no-repeat;
+	background-position: 75px 20px;
+	z-index: 5;
+}
+#menu ul li:nth-child(3) {
+	background-image: url(../images/menuIcon04.png);
+	background-repeat: no-repeat;
+	background-position: 75px 20px;
+}
+
+#menu ul li:nth-child(3):hover {
+	background-image: url(../images/menuIcon04_on.png);
+	background-repeat: no-repeat;
+	background-position: 75px 20px;
+	z-index: 5;
+}
+
+#menu ul li:nth-child(4) {
+	background-image: url(../images/menuIcon05.png);
+	background-repeat: no-repeat;
+	background-position: 42px 20px;
+}
+
+#menu ul li:nth-child(4):hover {
+	background-image: url(../images/menuIcon05_on.png);
+	background-repeat: no-repeat;
+	background-position: 42px 20px;
+	z-index: 5;
+}
+#menu ul li:nth-child(5) {
+	background-image: url(../images/menuIcon03.png);
+	background-repeat: no-repeat;
+	background-position: 44px 20px;
+}
+
+#menu ul li:nth-child(5):hover {
+	background-image: url(../images/menuIcon03_on.png);
+	background-repeat: no-repeat;
+	background-position: 44px 20px;
+	z-index: 5;
+}
+
+#menu ul li:nth-child(6) {
+	background-image: url(../images/menuIcon06.png);
+	background-repeat: no-repeat;
+	background-position: 62px 20px;
+}
+
+#menu ul li:nth-child(6):hover {
+	background-image: url(../images/menuIcon06_on.png);
+	background-repeat: no-repeat;
+	background-position: 62px 20px;
+	z-index: 5;
+}
+
+#menu ul li:nth-child(7) {
+	background-image: url(../images/menuIcon07.png);
+	background-repeat: no-repeat;
+	background-position: 61px 20px;
+}
+
+#menu ul li:nth-child(7):hover {
+	background-image: url(../images/menuIcon07_on.png);
+	background-repeat: no-repeat;
+	background-position: 61px 20px;
+	z-index: 5;
+}
+
+/* 호버 여깄다!!!!!!!!!!!!!!! */
+#menu ul li:hover .x{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x1{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x2{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x3{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x4{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x5{
+	color:#0095eb;
+}
+
+#menu ul li:hover .x6{
+	color:#0095eb;
+}
+
+
+
+
+/* 클릭 */
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+    
+}
+/* 점 없애기 */
+li{list-style:none;}
+
+/* 미니 네비바 */
+.headUtil .fr{
+	width:1240px;
+	margin:0 auto;
+	background: #f2f2f2;
+	padding-left: 80%;
+}
+.headUtil .fr a{
+	display: inline-block;
+    padding: 5px 10px 5px;
+    font-size: 13px;
+    color: #777;
+}
+
+nav h1{
+    display: block;
+    width: 101px;
+    height: 97px;
+    
+/*     text-indent: -999em; */
+   
+}
+
+nav{width: 1240px; margin: 0 auto; 
+	height: 180x;
+	padding-left:150px; 
+	/* margin-left:400px; */
+
+	padding-top: 50px;
+	background: url(../images/logo.png) no-repeat;
+	background-position: 90px 40px;
+	}
+
+/* ================여기까지 네비바================== */
+
+
+
+.mytashuArea p {
+    font-size: 15px;
+    color: #777777;
+    margin-bottom: 60px;
+}
+
+
+#subCont .scont_wrap{
+	max-width: 1240px;
+	margin: 0 auto;
+	height: 900px;
+	padding-top: 60px;
+/* 	background: lightgray; */
+}
+#sublocation {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 240px;
+    min-height: auto;
+    margin: 0 0 70px;
+}
+
+#sublocation h2 {
+    background: #008ada url(images/sublocation.png) no-repeat;
+    border-radius: 0 40px 0 0;
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: -1px;
+    padding: 54px 30px;
+}
+
+#sublocation h2 span {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+}
+
+#sublocation .link li.on>a {
+    border: 1px solid #00446b;
+    background: #00446b;
+    font-family: 'Noto Sans M';
+    color: #fff;
+}
+#sublocation .link li a {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+}
+#sublocation .link > li {
+    position: relative;
+    border: 1px solid #cecece;
+    border-top: none;
+}
+
+.subcontents{
+/* 	margin-left:240px; */
+/* 	background: olive; */
+	margin-top: 100px;
+	width: 1000px;
+	height:500px;
+}
+
+#cont_wrap .tashu_h4:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 19px;
+    background: #009440;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+
+
+/* 테이블이다 */
+#form{
+	float : right;
+	margin : 50px;
+}
+table{
+	border-right:none;
+	border-left:none;
+	width: 850px;
+	margin: 0 auto;
+	border-top: 1px solid #444444;
+    border-collapse: collapse;
+
+	
+}
+
+th, td {
+
+  text-align: center;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tr:hover { 
+	background-color: lightgrey; 
+}
+
+
+
+
+
+
+
+
+
+/* 빨리하자 */
+
+
+
+#subCont .subcontents {
+    position: relative;
+    float: right;
+    width: 940px;
+}
+
+
+#subCont .subcontents #location {
+    position: relative;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0 0 25px;
+}
+
+#cont_wrap .mytashuArea .tashu_h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-left: 10px;
+}
+
+#cont_wrap .tashu_h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+/* ===========================푸터시작============================= */
+#footer{
+   width: 100%;
+   height: 200px;
+   background-color: #2b2b2b; 
+}
+
+#footer .footCont{
+   max-width: 1240px;
+   margin: 0 auto;
+   padding: 40px 0 60px;
+}
+
+#footer .footCont .footAddr address span {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: #9c9c9c;
+    margin-bottom: 5px;
+}
+#footer .footCont .footAddr .copy{
+   margin-top: 20px;
+   font-size:13px;
+   color: #f3f3f3;
+}

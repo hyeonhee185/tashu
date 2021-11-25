@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="reply">
+   
+   <select id = "ReplyList" resultClass="ReplyVO" parameterClass="int">
+      select * from course_reply where cno = #cno# order by rno
+   </select>
+   
+   <insert id="SaveReply" parameterClass="ReplyVO">
+      <selectKey keyProperty="rno" resultClass="int">
+         select SEQ_COURSE_REPLY_NO.nextval from dual
+      </selectKey>
+      insert into course_reply
+      values(
+         #rno#,
+         #cno#,
+         #r_writer#,
+         #r_content#,
+         sysdate
+      )
+   </insert>
+   
+   
+   <delete id="DeleteReply" parameterClass="int">
+      delete from course_reply where rno = #rno#
+    </delete>
+   
+</sqlMap>

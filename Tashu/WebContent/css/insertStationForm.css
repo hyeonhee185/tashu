@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+*{margin:0; padding:0}
+
+body{
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+}
+
+
+
+/* ================여기까지 네비바================== */
+
+
+
+
+/* 테이블이다 */
+
+table{
+	width: 600px;
+	margin: 0 auto;
+	border: 1px solid black;
+	margin-left: 60px;
+    margin-right: 10px;
+	
+}
+
+/* td { */
+/*   text-align: center; */
+/*   padding: 5px; */
+/*   width: 80px; */
+/* } */
+
+/* 폼 밑으로 */
+/* #stationForm { */
+/* 	margin-top: 70px; */
+/* 	font-size:15px; */
+/* 	padding: 5px; */
+/* } */
+
+/* table tr td .td1{ */
+/* 	width:100%; border: 0; */
+/* } */
+
+/* table tr td .td2{ */
+/* 	padding:5px; */
+/* 	margin-left: 5px; */
+/* 	margin-right: 5px; */
+/* } */
+
+
+
+
+/* 테이블이다 */
+
+
+table{
+	border: 1px solid black;
+	font-size: 17px;
+	width: 500px;
+}
+
+td{
+	border: 1px dotted black;
+	text-align: center;
+	font-size:15px;
+	font-weight: 300;
+	width: 20px;
+/*     margin: 10px; */
+/*     padding: 5px 1px 5px 1px; */
+}
+
+
+td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(7),td:nth-child(8){
+	width:55px;
+	font-size: 15px;
+}
+
+th:nth-child(6){
+	width:60px;
+	font-size:15px;
+}
+
+/* tbody tr:nth-child(2n+1) td{ */
+/*     background-color: #e3f2fd; */
+/* } */
+
+tbody tr .sta{
+	background-color: #e3f3fd;
+}
+
+
+h1 {
+	padding-bottom: 20px;
+	font-family: 'Noto Sans M';
+	font-size: 20px;
+	font-weight:bold;
+	margin-top:50px;
+	margin-left: 80px;
+	width:100%;
+}
+
+#insert:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 19px;
+    background: #009440;
+    position: absolute;
+    top: 58.5px;
+    margin-left: 11%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.btn123 {
+	padding-top:10px;
+	width:100px;
+	margin:0 auto;
+
+}
+
+.btn12 {
+	border: 1px solid #777;
+    background: #0095eb;
+    color: #fff;
+    font: bold 13px 'Noto Sans M';
+    padding: 1px 4px 1px 4px;
+    cursor: pointer;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+#station_name {width:100%; border: 0;}
+#station_area {width:100%; border: 0;}
+#station_gu {width:100%; border: 0;}
+#station_dong {width:100%; border: 0;}
+#station_addr {width:100%; border: 0;}
+#station_locker {width:100%; border: 0;}
+#station_y_pos {width:100%; border: 0;}
+#station_x_pos {width:100%; border: 0;}
+#station_status {width:100%; border: 0;}
+
+
+
+
+/* 빨리하자 */
+
+#subCont .subcontents {
+    position: relative;
+    float: right;
+    width: 940px;
+}
+
+
+#subCont .subcontents #location {
+    position: relative;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0 0 25px;
+}
+
+#cont_wrap .mytashuArea .tashu_h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-left: 10px;
+}
+
+#cont_wrap .tashu_h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-left: 10px;
+}
+
+.mytashuArea p {
+    font-size: 15px;
+    color: #777777;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    line-height: 25px;
+}
+
+#cont_wrap .tashu_h4:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 19px;
+    background: #009440;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+
+/* ===========================푸터시작============================= */

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="member">
+
+<select id = "login" resultClass="memberVO" >
+	select * from member where mem_id=#mem_id# and mem_pass=#mem_pass#
+</select>
+
+<insert id="insertMember" parameterClass="memberVO">
+   insert into member (mem_id, mem_pass, mem_name, mem_tel, mem_zip, mem_add1, mem_add2, status) values (#mem_id#, #mem_pass#, #mem_name#, #mem_tel#, #mem_zip#, #mem_add1#, #mem_add2#, #status#)
+</insert>
+
+<select id="getMember" resultClass="memberVO"	parameterClass="String">
+		select * from member where mem_id = #mem_id#
+	</select>
+
+<select id="idCheck" resultClass="int" parameterClass="string">
+  	select count(mem_id) from member where mem_id = #mem_id#
+</select>
+
+	<delete id="deleteMember" parameterClass="String">
+		update member
+		set status=3
+		where mem_id = #String#
+	</delete>
+	
+	<update id="updateMember" parameterClass="memberVO">
+	update member
+	set mem_pass=#mem_pass#, 
+		mem_name=#mem_name#, 
+		mem_tel=#mem_tel#, 
+		mem_zip=#mem_zip#, 
+		mem_add1=#mem_add1#, 
+		mem_add2=#mem_add2#
+	where mem_id=#mem_id#
+	</update>
+	
+	<select id="getAllMember" resultClass="memberVO">
+		select * from member
+	</select>
+	
+ 	<select id="statusMember" resultClass="memberVO" parameterClass="int">
+		select * from member where status=#status#
+	</select> 
+</sqlMap>
